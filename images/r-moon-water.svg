@@ -16,7 +16,7 @@
     </filter>
   </defs>
   <rect width="1200" height="900" fill="url(#glow)"/>
-  <g stroke="#C8A96E" stroke-opacity="0.3" stroke-width="1.2" fill="#242018" fill-opacity="0.75">
+<g transform="translate(100,130) scale(0.85)">  <g stroke="#C8A96E" stroke-opacity="0.3" stroke-width="1.2" fill="#242018" fill-opacity="0.75">
     <path d="M560 470 h44 v40 q36 22 36 70 v100 q0 22 -22 22 h-72 q-22 0 -22 -22 v-100 q0 -48 36 -70 z"/>
     <rect x="556" y="448" width="52" height="24" rx="4" fill="#2C3B2A" fill-opacity="0.8"/>
     <path d="M690 540 h30 v28 q26 16 26 52 v62 q0 20 -20 20 h-42 q-20 0 -20 -20 v-62 q0 -36 26 -52 z"/>
@@ -25,7 +25,12 @@
     <rect x="445" y="544" width="32" height="18" rx="3" fill="#2C3B2A" fill-opacity="0.8"/>
     <line x1="536" y1="600" x2="628" y2="600" stroke-opacity="0.14" fill="none"/>
     <line x1="390" y1="704" x2="810" y2="704" stroke-opacity="0.18" fill="none"/>
-  </g>
+  </g></g><g transform="translate(440,-170) scale(0.48)">  <g>
+    <path d="M660 250 A160 160 0 1 0 660 550 A205 205 0 0 1 660 250 Z" fill="#C8A96E" fill-opacity="0.09" stroke="#C8A96E" stroke-opacity="0.28" stroke-width="1.2"/>
+    <circle cx="600" cy="400" r="235" fill="none" stroke="#C8A96E" stroke-opacity="0.06"/>
+    <circle cx="410" cy="250" r="2" fill="#C8A96E" fill-opacity="0.45"/>
+    <circle cx="840" cy="560" r="2.4" fill="#C8A96E" fill-opacity="0.36"/>
+  </g></g>
   <rect width="1200" height="900" fill="url(#vig)"/>
   <rect width="1200" height="900" filter="url(#grain)"/>
 </svg>

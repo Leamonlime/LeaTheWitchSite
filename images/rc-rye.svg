@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
   <defs>
-    <radialGradient id="glow" cx="48%" cy="54%" r="80%">
+    <radialGradient id="glow" cx="50%" cy="50%" r="80%">
       <stop offset="0%" stop-color="#2a2519"/>
       <stop offset="52%" stop-color="#1d1a12"/>
       <stop offset="100%" stop-color="#12100a"/>
@@ -16,15 +16,18 @@
     </filter>
   </defs>
   <rect width="1200" height="900" fill="url(#glow)"/>
-  <g stroke="#C8A96E" stroke-opacity="0.3" stroke-width="1.2" fill="#242018" fill-opacity="0.75">
-    <path d="M560 470 h44 v40 q36 22 36 70 v100 q0 22 -22 22 h-72 q-22 0 -22 -22 v-100 q0 -48 36 -70 z"/>
-    <rect x="556" y="448" width="52" height="24" rx="4" fill="#2C3B2A" fill-opacity="0.8"/>
-    <path d="M690 540 h30 v28 q26 16 26 52 v62 q0 20 -20 20 h-42 q-20 0 -20 -20 v-62 q0 -36 26 -52 z"/>
-    <rect x="687" y="522" width="36" height="20" rx="3" fill="#2C3B2A" fill-opacity="0.8"/>
-    <path d="M448 560 h26 v24 q22 14 22 46 v52 q0 20 -20 20 h-30 q-20 0 -20 -20 v-52 q0 -32 22 -46 z"/>
-    <rect x="445" y="544" width="32" height="18" rx="3" fill="#2C3B2A" fill-opacity="0.8"/>
-    <line x1="536" y1="600" x2="628" y2="600" stroke-opacity="0.14" fill="none"/>
-    <line x1="390" y1="704" x2="810" y2="704" stroke-opacity="0.18" fill="none"/>
+  <g stroke="#C8A96E" stroke-opacity="0.35" stroke-width="1.4" fill="none">
+    <path d="M594 730 C 590 610, 598 490, 616 390"/>
+    <g fill="#2C3B2A" fill-opacity="0.7" stroke-opacity="0.25" stroke-width="1">
+      <path d="M616 390 q -34 -18 -40 -56 q 40 12 40 56"/>
+      <path d="M616 390 q 36 -16 44 -54 q -42 10 -44 54"/>
+      <path d="M610 444 q -34 -18 -40 -56 q 40 12 40 56"/>
+      <path d="M610 444 q 36 -16 44 -54 q -42 10 -44 54"/>
+      <path d="M604 498 q -32 -18 -38 -54 q 38 12 38 54"/>
+      <path d="M604 498 q 34 -16 42 -52 q -40 10 -42 52"/>
+    </g>
+    <path d="M616 390 q 4 -46 22 -74" stroke-opacity="0.2"/>
+    <path d="M616 390 q -8 -44 -24 -70" stroke-opacity="0.2"/>
   </g>
   <rect width="1200" height="900" fill="url(#vig)"/>
   <rect width="1200" height="900" filter="url(#grain)"/>

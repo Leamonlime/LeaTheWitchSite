@@ -1,6 +1,6 @@
 /* ============================================================
-   LEA THE WITCH — main.js
-   Slow, deliberate, purposeful. Nothing snaps.
+   LEA THE WITCH — main.js — V2
+   Everything slow. Everything intentional.
    ============================================================ */
 
 (function () {
@@ -8,7 +8,7 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- page enter / leave fades ---------- */
+  /* ---------- page enter / leave ---------- */
 
   document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(function () {
@@ -16,7 +16,6 @@
     });
   });
 
-  // restore opacity when returning via back/forward cache
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
       document.body.classList.remove('page-leaving');
@@ -55,61 +54,47 @@
   var toggle = document.getElementById('navToggle');
   var drawer = document.getElementById('navDrawer');
   if (toggle && drawer) {
-    toggle.addEventListener('click', function () {
-      var open = drawer.classList.toggle('is-open');
+    var setDrawer = function (open) {
+      drawer.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
       document.body.classList.toggle('drawer-locked', open);
+    };
+    toggle.addEventListener('click', function () {
+      setDrawer(!drawer.classList.contains('is-open'));
+    });
+    // close on link tap
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setDrawer(false); });
     });
   }
 
-  /* ---------- scroll reveal — elements emerge from the dark ---------- */
+  /* ---------- scroll reveal ---------- */
 
-  var revealables = document.querySelectorAll('[data-reveal]');
-
-  // stagger children of a reveal group by 100ms
+  // stagger children within a group by 120ms
   document.querySelectorAll('[data-reveal-group]').forEach(function (group) {
-    var children = group.querySelectorAll('[data-reveal]');
-    children.forEach(function (el, i) {
-      el.style.setProperty('--reveal-delay', (i * 0.1) + 's');
+    group.querySelectorAll('.reveal').forEach(function (el, i) {
+      el.style.setProperty('--d', (i * 0.12) + 's');
     });
   });
 
+  var revealables = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
+          entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     revealables.forEach(function (el) { observer.observe(el); });
   } else {
-    revealables.forEach(function (el) { el.classList.add('is-revealed'); });
+    revealables.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* ---------- hero whisper — words surface one by one ---------- */
-
-  var whisper = document.querySelector('.hero-whisper');
-  if (whisper && !whisper.querySelector('.w')) {
-    var words = whisper.textContent.trim().split(/\s+/);
-    whisper.textContent = '';
-    words.forEach(function (word, i) {
-      var span = document.createElement('span');
-      span.className = 'w';
-      span.textContent = word;
-      span.style.setProperty('--w-delay', (0.45 + i * 0.12) + 's');
-      whisper.appendChild(span);
-      if (i < words.length - 1) whisper.appendChild(document.createTextNode(' '));
-    });
-    window.setTimeout(function () {
-      whisper.classList.add('is-awake');
-    }, reduceMotion ? 0 : 150);
-  }
-
-  /* ---------- category filters (blog / rituals) ---------- */
+  /* ---------- category filters ---------- */
 
   var pills = document.querySelectorAll('.filter-pill');
   if (pills.length) {

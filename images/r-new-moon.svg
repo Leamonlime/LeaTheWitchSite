@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
   <defs>
-    <radialGradient id="glow" cx="48%" cy="54%" r="80%">
+    <radialGradient id="glow" cx="50%" cy="44%" r="80%">
       <stop offset="0%" stop-color="#2a2519"/>
       <stop offset="52%" stop-color="#1d1a12"/>
       <stop offset="100%" stop-color="#12100a"/>
@@ -16,15 +16,14 @@
     </filter>
   </defs>
   <rect width="1200" height="900" fill="url(#glow)"/>
-  <g stroke="#C8A96E" stroke-opacity="0.3" stroke-width="1.2" fill="#242018" fill-opacity="0.75">
-    <path d="M560 470 h44 v40 q36 22 36 70 v100 q0 22 -22 22 h-72 q-22 0 -22 -22 v-100 q0 -48 36 -70 z"/>
-    <rect x="556" y="448" width="52" height="24" rx="4" fill="#2C3B2A" fill-opacity="0.8"/>
-    <path d="M690 540 h30 v28 q26 16 26 52 v62 q0 20 -20 20 h-42 q-20 0 -20 -20 v-62 q0 -36 26 -52 z"/>
-    <rect x="687" y="522" width="36" height="20" rx="3" fill="#2C3B2A" fill-opacity="0.8"/>
-    <path d="M448 560 h26 v24 q22 14 22 46 v52 q0 20 -20 20 h-30 q-20 0 -20 -20 v-52 q0 -32 22 -46 z"/>
-    <rect x="445" y="544" width="32" height="18" rx="3" fill="#2C3B2A" fill-opacity="0.8"/>
-    <line x1="536" y1="600" x2="628" y2="600" stroke-opacity="0.14" fill="none"/>
-    <line x1="390" y1="704" x2="810" y2="704" stroke-opacity="0.18" fill="none"/>
+  <g>
+    <circle cx="600" cy="400" r="150" fill="#12100a" fill-opacity="0.85"/>
+    <circle cx="600" cy="400" r="150" fill="none" stroke="#C8A96E" stroke-opacity="0.32" stroke-width="1.2"/>
+    <circle cx="600" cy="400" r="196" fill="none" stroke="#C8A96E" stroke-opacity="0.09" stroke-width="0.8"/>
+    <circle cx="600" cy="400" r="244" fill="none" stroke="#C8A96E" stroke-opacity="0.045" stroke-width="0.6"/>
+    <circle cx="330" cy="230" r="2" fill="#C8A96E" fill-opacity="0.45"/>
+    <circle cx="880" cy="300" r="1.6" fill="#C8A96E" fill-opacity="0.36"/>
+    <circle cx="780" cy="640" r="2.2" fill="#C8A96E" fill-opacity="0.3"/>
   </g>
   <rect width="1200" height="900" fill="url(#vig)"/>
   <rect width="1200" height="900" filter="url(#grain)"/>
