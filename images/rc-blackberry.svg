@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#2a2519"/>
+      <stop offset="52%" stop-color="#1d1a12"/>
+      <stop offset="100%" stop-color="#12100a"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#0d0b07" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#0d0b07" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0d0b07" stop-opacity="0.55"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.78 0 0 0 0 0.66 0 0 0 0 0.43 0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <g stroke="#8A8070" stroke-opacity="0.5" fill="none" stroke-width="1.6">
+    <path d="M600 480 C 612 428, 644 396, 696 376"/>
+    <path d="M696 376 q 44 -22 84 -6 q -42 26 -84 6" fill="#2C3B2A" fill-opacity="0.8" stroke="#C8A96E" stroke-opacity="0.18" stroke-width="1"/>
+  </g>
+  <g fill="#242018" stroke="#C8A96E" stroke-opacity="0.32" stroke-width="1.1">
+    <circle cx="566" cy="530" r="30"/>
+    <circle cx="628" cy="522" r="26"/>
+    <circle cx="600" cy="580" r="32"/>
+    <circle cx="540" cy="596" r="24"/>
+    <circle cx="662" cy="578" r="24"/>
+    <circle cx="596" cy="640" r="26"/>
+  </g>
+  <line x1="430" y1="700" x2="770" y2="700" stroke="#C8A96E" stroke-opacity="0.16"/>
+  <rect width="1200" height="900" fill="url(#vig)"/>
+  <rect width="1200" height="900" filter="url(#grain)"/>
+</svg>
