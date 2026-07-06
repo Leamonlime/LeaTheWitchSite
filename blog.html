@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal — Lea the Witch</title>
+  <meta name="description" content="The journal — essays on witchcraft, dark style, creative writing, and slow living from Lea the Witch.">
+  <meta property="og:title" content="Journal — Lea the Witch">
+  <meta property="og:description" content="Essays on witchcraft, dark style, creative writing, and slow living.">
+  <meta property="og:image" content="https://leathewitch.com/images/post-slow-house.svg">
+  <meta property="og:url" content="https://leathewitch.com/blog">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://leathewitch.com/blog">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M20 4 A13 13 0 1 0 20 28 A16.5 16.5 0 0 1 20 4 Z' fill='%23D4AF6A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Analytics — replace GA_TRACKING_ID to activate
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_TRACKING_ID');
+  </script>
+  -->
+</head>
+<body>
+
+  <header class="site-nav" id="siteNav">
+    <a class="nav-brand" href="index.html">Lea the Witch</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="link-draw active" href="blog.html">Blog</a>
+      <a class="link-draw" href="rituals.html">Rituals</a>
+      <a class="link-draw" href="shop.html">Shop</a>
+      <a class="link-draw" href="about.html">About</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="rituals.html">Rituals</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <section class="masthead">
+      <h1 data-reveal>Journal</h1>
+      <hr class="rule-gold rule-wide rule-center">
+      <div class="filters" role="group" aria-label="Filter posts by category">
+        <button class="filter-pill is-active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="witchcraft">Witchcraft</button>
+        <button class="filter-pill" data-filter="style">Style</button>
+        <button class="filter-pill" data-filter="creative">Creative</button>
+        <button class="filter-pill" data-filter="life">Life</button>
+      </div>
+    </section>
+
+    <section class="post-index">
+
+      <a class="featured-card grid-card" href="post-template.html" data-category="life" data-reveal>
+        <img src="images/post-slow-house.svg" alt="A teacup with rising steam, drawn in gold on a dark ground">
+        <div class="featured-copy">
+          <span class="meta">Life</span>
+          <h2 class="featured-title">On Keeping a Slow House</h2>
+          <span class="meta meta-date">June 21, 2026</span>
+        </div>
+      </a>
+
+      <!-- AdSense slot — mid-content -->
+      <div class="ad-slot ad-mid-content" aria-hidden="true"></div>
+
+      <div class="post-grid" data-reveal-group>
+        <a class="post-card grid-card" href="post-template.html" data-category="style" data-reveal>
+          <figure><img src="images/post-fog-wardrobe.svg" alt="A pale moon behind layers of fog" loading="lazy"></figure>
+          <h3>Dressing for the Fog: A Coastal Gothic Wardrobe</h3>
+          <span class="meta"><span class="cat">Style</span> · June 9, 2026</span>
+        </a>
+        <a class="post-card grid-card" href="post-template.html" data-category="creative" data-reveal>
+          <figure><img src="images/post-dark-fiction.svg" alt="A quill drawn in gold" loading="lazy"></figure>
+          <h3>The Discipline of Writing Dark Fiction</h3>
+          <span class="meta"><span class="cat">Creative</span> · May 27, 2026</span>
+        </a>
+        <a class="post-card grid-card" href="post-template.html" data-category="witchcraft" data-reveal>
+          <figure><img src="images/post-altar.svg" alt="Three lit candles" loading="lazy"></figure>
+          <h3>A Beginner&rsquo;s Altar, Honestly</h3>
+          <span class="meta"><span class="cat">Witchcraft</span> · May 14, 2026</span>
+        </a>
+        <a class="post-card grid-card" href="post-template.html" data-category="witchcraft" data-reveal>
+          <figure><img src="images/post-leaves.svg" alt="A branch with dark leaves" loading="lazy"></figure>
+          <h3>What the Leaves Said: Reading Tea at the Kitchen Table</h3>
+          <span class="meta"><span class="cat">Witchcraft</span> · April 30, 2026</span>
+        </a>
+        <a class="post-card grid-card" href="post-template.html" data-category="life" data-reveal>
+          <figure><img src="images/post-wrong-aisle.svg" alt="A skeleton key" loading="lazy"></figure>
+          <h3>Notes from the Wrong Aisle</h3>
+          <span class="meta"><span class="cat">Life</span> · April 17, 2026</span>
+        </a>
+        <a class="post-card grid-card" href="post-template.html" data-category="style" data-reveal>
+          <figure><img src="images/post-silver.svg" alt="A crescent moon" loading="lazy"></figure>
+          <h3>Layering Silver and Shadow</h3>
+          <span class="meta"><span class="cat">Style</span> · April 3, 2026</span>
+        </a>
+      </div>
+
+      <nav class="pagination" aria-label="Pagination">
+        <a class="btn-ghost btn-small" href="#" aria-disabled="true">&larr; Previous</a>
+        <span class="page-num">page one of one</span>
+        <a class="btn-ghost btn-small" href="#" aria-disabled="true">Next &rarr;</a>
+      </nav>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-brand">Lea the Witch</p>
+    <hr class="rule-gold rule-center">
+    <nav class="footer-links" aria-label="Footer">
+      <a class="link-draw" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <span class="dot">·</span>
+      <a class="link-draw" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <span class="dot">·</span>
+      <a class="link-draw" href="mailto:hello@thedarkandwild.com">hello@thedarkandwild.com</a>
+    </nav>
+    <p class="footer-copy">© 2026 Lea the Witch · <a href="privacy.html">Privacy</a></p>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" hidden>
+    <p>This site uses cookies for analytics and advertising. Continuing means you agree to our <a href="privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn-ghost btn-small" data-cookie="accept">Accept</button>
+      <button class="btn-ghost btn-small" data-cookie="decline">Decline</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
