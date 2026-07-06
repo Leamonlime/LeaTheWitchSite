@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#2b2820"/>
+      <stop offset="50%" stop-color="#1e1c17"/>
+      <stop offset="100%" stop-color="#131210"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#0e0d0b" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#0e0d0b" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0e0d0b" stop-opacity="0.6"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.83 0 0 0 0 0.74 0 0 0 0 0.60 0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <g stroke="#D4AF6A" fill="none">
+    <circle cx="600" cy="440" r="110" stroke-opacity="0.25" stroke-width="1.4"/>
+    <path d="M300 430 q 150 -30 300 0 t 300 0" stroke-opacity="0.12" stroke-width="1.2"/>
+    <path d="M240 500 q 180 -40 360 0 t 360 0" stroke-opacity="0.18" stroke-width="1.2"/>
+    <path d="M200 570 q 200 -36 400 0 t 400 0" stroke-opacity="0.14" stroke-width="1.2"/>
+    <path d="M240 640 q 180 -30 360 0 t 360 0" stroke-opacity="0.10" stroke-width="1.2"/>
+    <circle cx="380" cy="240" r="1.8" fill="#D4AF6A" fill-opacity="0.4" stroke="none"/>
+    <circle cx="820" cy="210" r="2.2" fill="#D4AF6A" fill-opacity="0.4" stroke="none"/>
+  </g>
+  <rect width="1200" height="900" fill="url(#vig)"/>
+  <rect width="1200" height="900" filter="url(#grain)"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="52%" r="80%">
+      <stop offset="0%" stop-color="#2b2820"/>
+      <stop offset="50%" stop-color="#1e1c17"/>
+      <stop offset="100%" stop-color="#131210"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#0e0d0b" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#0e0d0b" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0e0d0b" stop-opacity="0.6"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.83 0 0 0 0 0.74 0 0 0 0 0.60 0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <g stroke="#D4AF6A" stroke-opacity="0.35" stroke-width="1.4" fill="none">
+    <path d="M470 520 h260 q0 130 -130 130 q-130 0 -130 -130 z" fill="#0d2f28" fill-opacity="0.55"/>
+    <path d="M730 542 q58 0 58 44 q0 44 -68 40"/>
+    <ellipse cx="600" cy="520" rx="130" ry="15" fill="#131210" fill-opacity="0.6"/>
+    <path d="M560 470 q 14 -30 0 -55 q -14 -25 2 -50" stroke-opacity="0.22"/>
+    <path d="M615 465 q 16 -34 0 -62 q -14 -26 2 -52" stroke-opacity="0.3"/>
+    <path d="M665 470 q 12 -26 0 -48 q -12 -24 2 -46" stroke-opacity="0.18"/>
+    <line x1="430" y1="678" x2="770" y2="678" stroke-opacity="0.2"/>
+  </g>
+  <rect width="1200" height="900" fill="url(#vig)"/>
+  <rect width="1200" height="900" filter="url(#grain)"/>
+</svg>
