@@ -12,10 +12,10 @@
   <meta property="og:type" content="website">
   <meta name="pinterest-rich-pin" content="true">
   <link rel="canonical" href="https://leathewitch.com/rituals">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23C8A96E' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%236B2737' stroke-width='2'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <!-- Google Analytics — replace GA_TRACKING_ID to activate
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
@@ -32,10 +32,10 @@
   <header class="site-nav" id="siteNav">
     <a class="nav-brand" href="index.html">Lea the Witch</a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="journal.html">Journal</a>
-      <a class="active" href="rituals.html">Rituals</a>
-      <a href="recipes.html">Recipes</a>
-      <a href="shop.html">Shop</a>
+      <a href="journal.html">Journal</a><span class="dot" aria-hidden="true">·</span>
+      <a class="active" href="rituals.html">Rituals</a><span class="dot" aria-hidden="true">·</span>
+      <a href="recipes.html">Recipes</a><span class="dot" aria-hidden="true">·</span>
+      <a href="shop.html">Shop</a><span class="dot" aria-hidden="true">·</span>
       <a href="about.html">About</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
@@ -44,6 +44,7 @@
   </header>
 
   <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <span class="drawer-brand">Lea the Witch</span>
     <nav aria-label="Mobile">
       <a href="index.html">Home</a>
       <a href="journal.html">Journal</a>
@@ -57,94 +58,103 @@
   <main>
 
     <section class="masthead">
-      <h1 class="reveal visible">Rituals</h1>
-      <hr class="rule-short rule-center">
-      <p class="masthead-sub">Practice and intention</p>
-      <div class="filters" role="group" aria-label="Filter rituals by category">
-        <button class="filter-pill is-active" data-filter="all">All</button>
-        <button class="filter-pill" data-filter="spells">Spells</button>
-        <button class="filter-pill" data-filter="herbal">Herbal</button>
-        <button class="filter-pill" data-filter="crystal">Crystal</button>
-        <button class="filter-pill" data-filter="seasonal">Seasonal</button>
-        <button class="filter-pill" data-filter="moon">Moon</button>
+      <div class="container">
+        <h1 class="reveal visible">Rituals</h1>
+        <span class="masthead-sub eyebrow">Practice and intention</span>
+        <div class="filters" role="group" aria-label="Filter rituals by category">
+          <button class="filter-pill is-active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="spells">Spells</button>
+          <button class="filter-pill" data-filter="herbal">Herbal</button>
+          <button class="filter-pill" data-filter="crystal">Crystal</button>
+          <button class="filter-pill" data-filter="seasonal">Seasonal</button>
+          <button class="filter-pill" data-filter="moon">Moon</button>
+        </div>
+      </div>
+
+      <!-- Object 5a — industrial bar. Appears once. -->
+      <div class="cutout cutout-bar" aria-hidden="true">
+        <svg viewBox="0 0 120 44" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 32 L106 12" stroke="#1A1A18" stroke-width="2"/>
+          <path d="M27 24.6 L29 33.4 M91 10.6 L93 19.4" stroke="#1A1A18" stroke-width="1.2"/>
+          <circle cx="14" cy="32" r="7" fill="#1A1A18"/>
+          <circle cx="106" cy="12" r="7" fill="#1A1A18"/>
+        </svg>
       </div>
     </section>
 
     <section class="post-index">
+      <div class="container">
 
-      <a class="featured-card grid-card reveal" href="ritual-template.html" data-category="seasonal">
-        <img src="images/r-longest-night.svg" alt="A full moon ringed with faint halos">
-        <div class="featured-copy">
-          <span class="meta">Seasonal · 45 min practice</span>
-          <h2 class="featured-title">A Ritual for the Longest Night</h2>
-          <span class="meta meta-date">June 18, 2026</span>
+        <a class="entry-featured grid-card reveal" href="ritual-template.html" data-category="seasonal">
+          <figure><img src="images/r-longest-night.svg" alt="A full moon ringed with faint halos"></figure>
+          <div class="ef-copy">
+            <span class="meta">Seasonal · 45 min · June 18, 2026</span>
+            <h2>A Ritual for the Longest Night</h2>
+          </div>
+        </a>
+
+        <!-- AdSense slot -->
+        <div class="ad-slot" aria-hidden="true"></div>
+
+        <div class="post-grid" data-reveal-group>
+          <a class="post-card grid-card reveal" href="ritual-template.html" data-category="moon">
+            <figure><img src="images/r-new-moon.svg" alt="A dark new moon outlined in gold" loading="lazy"></figure>
+            <span class="meta">Moon · June 6, 2026</span>
+            <h3>New Moon Intention Setting</h3>
+            <span class="meta meta-extra">20 min</span>
+          </a>
+          <a class="post-card grid-card reveal" href="ritual-template.html" data-category="herbal">
+            <figure><img src="images/r-threshold.svg" alt="A rosemary sprig" loading="lazy"></figure>
+            <span class="meta">Herbal · May 22, 2026</span>
+            <h3>A Salt &amp; Rosemary Threshold Ward</h3>
+            <span class="meta meta-extra">15 min</span>
+          </a>
+          <a class="post-card grid-card reveal" href="ritual-template.html" data-category="crystal">
+            <figure><img src="images/r-tourmaline.svg" alt="A cluster of dark crystals" loading="lazy"></figure>
+            <span class="meta">Crystal · May 8, 2026</span>
+            <h3>Cleansing Black Tourmaline, Properly</h3>
+            <span class="meta meta-extra">10 min</span>
+          </a>
+          <a class="post-card grid-card reveal" href="ritual-template.html" data-category="spells">
+            <figure><img src="images/r-candle-focus.svg" alt="A single lit candle" loading="lazy"></figure>
+            <span class="meta">Spells · April 24, 2026</span>
+            <h3>A Candle Spell for Focus</h3>
+            <span class="meta meta-extra">25 min</span>
+          </a>
+          <a class="post-card grid-card reveal" href="ritual-template.html" data-category="herbal">
+            <figure><img src="images/r-dream-tea.svg" alt="A cup with rising steam" loading="lazy"></figure>
+            <span class="meta">Herbal · April 10, 2026</span>
+            <h3>Mugwort Dream Tea for Restless Sleepers</h3>
+            <span class="meta meta-extra">15 min</span>
+          </a>
+          <a class="post-card grid-card reveal" href="ritual-template.html" data-category="moon">
+            <figure><img src="images/r-moon-water.svg" alt="Vessels beneath a crescent moon" loading="lazy"></figure>
+            <span class="meta">Moon · March 28, 2026</span>
+            <h3>Making &amp; Keeping Full Moon Water</h3>
+            <span class="meta meta-extra">10 min</span>
+          </a>
         </div>
-      </a>
 
-      <!-- AdSense slot — mid-content -->
-      <div class="ad-slot ad-mid-content" aria-hidden="true"></div>
-
-      <div class="post-grid" data-reveal-group>
-        <a class="post-card grid-card reveal" href="ritual-template.html" data-category="moon">
-          <figure><img src="images/r-new-moon.svg" alt="A dark new moon outlined in gold" loading="lazy"></figure>
-          <h3>New Moon Intention Setting</h3>
-          <span class="meta"><span class="cat">Moon</span> · June 6, 2026</span>
-          <span class="meta meta-extra">20 min practice</span>
-        </a>
-        <a class="post-card grid-card reveal" href="ritual-template.html" data-category="herbal">
-          <figure><img src="images/r-threshold.svg" alt="A rosemary sprig" loading="lazy"></figure>
-          <h3>A Salt &amp; Rosemary Threshold Ward</h3>
-          <span class="meta"><span class="cat">Herbal</span> · May 22, 2026</span>
-          <span class="meta meta-extra">15 min practice</span>
-        </a>
-        <a class="post-card grid-card reveal" href="ritual-template.html" data-category="crystal">
-          <figure><img src="images/r-tourmaline.svg" alt="A cluster of dark crystals" loading="lazy"></figure>
-          <h3>Cleansing Black Tourmaline, Properly</h3>
-          <span class="meta"><span class="cat">Crystal</span> · May 8, 2026</span>
-          <span class="meta meta-extra">10 min practice</span>
-        </a>
-        <a class="post-card grid-card reveal" href="ritual-template.html" data-category="spells">
-          <figure><img src="images/r-candle-focus.svg" alt="A single lit candle" loading="lazy"></figure>
-          <h3>A Candle Spell for Focus</h3>
-          <span class="meta"><span class="cat">Spells</span> · April 24, 2026</span>
-          <span class="meta meta-extra">25 min practice</span>
-        </a>
-        <a class="post-card grid-card reveal" href="ritual-template.html" data-category="herbal">
-          <figure><img src="images/r-dream-tea.svg" alt="A cup with rising steam" loading="lazy"></figure>
-          <h3>Mugwort Dream Tea for Restless Sleepers</h3>
-          <span class="meta"><span class="cat">Herbal</span> · April 10, 2026</span>
-          <span class="meta meta-extra">15 min practice</span>
-        </a>
-        <a class="post-card grid-card reveal" href="ritual-template.html" data-category="moon">
-          <figure><img src="images/r-moon-water.svg" alt="Vessels beneath a crescent moon" loading="lazy"></figure>
-          <h3>Making &amp; Keeping Full Moon Water</h3>
-          <span class="meta"><span class="cat">Moon</span> · March 28, 2026</span>
-          <span class="meta meta-extra">10 min practice</span>
-        </a>
       </div>
-
-      <nav class="pagination" aria-label="Pagination">
-        <a class="btn-ghost btn-small" href="#" aria-disabled="true">&larr; Previous</a>
-        <span class="page-num">one of one</span>
-        <a class="btn-ghost btn-small" href="#" aria-disabled="true">Next &rarr;</a>
-      </nav>
-
     </section>
 
   </main>
 
   <footer class="site-footer">
     <p class="footer-brand">Lea the Witch</p>
-    <hr class="rule-short rule-center">
     <nav class="footer-links" aria-label="Footer">
-      <a class="link-draw" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <span class="dot">·</span>
-      <a class="link-draw" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
-      <span class="dot">·</span>
-      <a class="link-draw" href="mailto:hello@thedarkandwild.com">hello@thedarkandwild.com</a>
+      <a href="journal.html">Journal</a><span class="dot" aria-hidden="true">·</span>
+      <a href="rituals.html">Rituals</a><span class="dot" aria-hidden="true">·</span>
+      <a href="recipes.html">Recipes</a><span class="dot" aria-hidden="true">·</span>
+      <a href="shop.html">Shop</a><span class="dot" aria-hidden="true">·</span>
+      <a href="about.html">About</a>
     </nav>
-    <a class="footer-privacy" href="privacy.html">Privacy Policy</a>
-    <p class="footer-copy">© 2026 Lea the Witch</p>
+    <p class="footer-contact">
+      <a href="mailto:hello@thedarkandwild.com">hello@thedarkandwild.com</a> ·
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> ·
+      <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+    </p>
+    <p class="footer-copy">© 2026 Lea the Witch · <a href="privacy.html">Privacy Policy</a></p>
   </footer>
 
   <div class="cookie-banner" id="cookieBanner" hidden>
