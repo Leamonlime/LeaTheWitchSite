@@ -1,6 +1,6 @@
 /* ============================================================
-   LEA THE WITCH — main.js — V2
-   Everything slow. Everything intentional.
+   LEA THE WITCH — main.js — V3
+   Slow. Deliberate. Nothing draws attention to itself.
    ============================================================ */
 
 (function () {
@@ -8,47 +8,15 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- page enter / leave ---------- */
-
-  document.addEventListener('DOMContentLoaded', function () {
-    requestAnimationFrame(function () {
-      document.body.classList.add('page-ready');
-    });
-  });
-
-  window.addEventListener('pageshow', function (e) {
-    if (e.persisted) {
-      document.body.classList.remove('page-leaving');
-      document.body.classList.add('page-ready');
-    }
-  });
-
-  document.addEventListener('click', function (e) {
-    if (reduceMotion) return;
-    var link = e.target.closest('a');
-    if (!link) return;
-    var href = link.getAttribute('href');
-    if (!href || href.charAt(0) === '#' || link.target === '_blank') return;
-    if (href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
-    if (link.origin && link.origin !== window.location.origin) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
-    e.preventDefault();
-    document.body.classList.add('page-leaving');
-    window.setTimeout(function () {
-      window.location.href = link.href;
-    }, 350);
-  });
-
   /* ---------- navigation ---------- */
 
   var nav = document.getElementById('siteNav');
   if (nav) {
-    var onScroll = function () {
-      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    var onNavScroll = function () {
+      nav.classList.toggle('is-scrolled', window.scrollY > 24);
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
   }
 
   var toggle = document.getElementById('navToggle');
@@ -64,7 +32,6 @@
     toggle.addEventListener('click', function () {
       setDrawer(!drawer.classList.contains('is-open'));
     });
-    // close on link tap
     drawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () { setDrawer(false); });
     });
@@ -92,6 +59,33 @@
     revealables.forEach(function (el) { observer.observe(el); });
   } else {
     revealables.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ---------- cut-out parallax — objects drift at ~0.4x scroll ---------- */
+
+  var cutouts = document.querySelectorAll('.cutout');
+  if (cutouts.length && !reduceMotion) {
+    var ticking = false;
+    var drift = function () {
+      ticking = false;
+      var vh = window.innerHeight;
+      cutouts.forEach(function (el) {
+        var host = el.parentElement;
+        if (!host) return;
+        var rect = host.getBoundingClientRect();
+        var offset = rect.top + rect.height / 2 - vh / 2;
+        el.style.setProperty('--drift', (offset * -0.12).toFixed(1) + 'px');
+      });
+    };
+    var requestDrift = function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(drift);
+      }
+    };
+    window.addEventListener('scroll', requestDrift, { passive: true });
+    window.addEventListener('resize', requestDrift, { passive: true });
+    drift();
   }
 
   /* ---------- category filters ---------- */
@@ -125,7 +119,7 @@
         var accepted = btn.getAttribute('data-cookie') === 'accept';
         try { window.localStorage.setItem('cookiesAccepted', accepted ? 'true' : 'false'); } catch (err) { /* private mode */ }
         banner.classList.add('is-dismissed');
-        window.setTimeout(function () { banner.hidden = true; }, 650);
+        window.setTimeout(function () { banner.hidden = true; }, 550);
       });
     });
   }
