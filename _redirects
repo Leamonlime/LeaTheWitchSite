@@ -1,3 +1,5 @@
 /shop/kits     https://thedarkandwild.com    301
 /shop/oddities https://thedarkandwild.com    301
+/recipes.html  /index.html                   302
+/shop.html     /index.html                   302
 /*             /index.html                   200
