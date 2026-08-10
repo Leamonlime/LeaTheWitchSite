@@ -693,6 +693,27 @@ body.drawer-locked { overflow: hidden; }
   background: var(--rule);
 }
 
+/* inline post images — same restrained treatment as the hero */
+.post-figure {
+  margin: 60px 0;
+}
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(20%) contrast(1.05);
+}
+.post-back {
+  display: inline-block;
+  margin-top: 1.2em;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+.post-back:hover { color: var(--burgundy); }
+
 /* ---------- recipe specifics ---------- */
 
 .recipe-facts {
