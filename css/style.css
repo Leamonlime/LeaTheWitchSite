@@ -305,7 +305,9 @@ body.drawer-locked { overflow: hidden; }
   filter: grayscale(20%) contrast(1.05);
 }
 @media (max-width: 900px) {
-  .hero { flex-direction: column-reverse; padding-top: 90px; }
+  .hero { flex-direction: column-reverse; padding-top: 90px; align-items: stretch; }
+  .hero-inner { padding-left: clamp(20px, 6vw, 48px); }
+  .hero-quote, .hero h1 { max-width: 100%; }
   .hero-image { flex-basis: auto; width: 60%; aspect-ratio: 3 / 4; margin-right: 0; align-self: flex-end; }
 }
 .hero .eyebrow { display: block; margin-bottom: 2.2rem; }
