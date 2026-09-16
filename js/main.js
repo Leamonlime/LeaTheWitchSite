@@ -88,7 +88,35 @@
     drift();
   }
 
-  /* ---------- category filters ---------- */
+  /* ---------- staggered publishing + category filters ---------- */
+
+  // Visitor's local date at midnight — good enough for a personal static site.
+  function todayMidnight() {
+    var d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  // A "YYYY-MM-DD" that is today or earlier counts as published. A missing or
+  // malformed date is treated as published, so nothing hides by accident.
+  function isPublished(dateStr) {
+    if (!dateStr) return true;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr.trim());
+    if (!m) return true;
+    return new Date(+m[1], +m[2] - 1, +m[3]) <= todayMidnight();
+  }
+
+  var gridCards = document.querySelectorAll('.grid-card');
+
+  // A card is shown only if it matches the active category AND its publish
+  // date has arrived — so a future post can never reappear via a filter click.
+  function applyCardFilter(filter) {
+    gridCards.forEach(function (card) {
+      var matchCat = filter === 'all' || card.getAttribute('data-category') === filter;
+      var visible = matchCat && isPublished(card.getAttribute('data-publish-date'));
+      card.classList.toggle('is-filtered-out', !visible);
+    });
+  }
 
   var pills = document.querySelectorAll('.filter-pill');
   if (pills.length) {
@@ -96,13 +124,15 @@
       pill.addEventListener('click', function () {
         pills.forEach(function (p) { p.classList.remove('is-active'); });
         pill.classList.add('is-active');
-        var filter = pill.getAttribute('data-filter');
-        document.querySelectorAll('.grid-card').forEach(function (card) {
-          var match = filter === 'all' || card.getAttribute('data-category') === filter;
-          card.classList.toggle('is-filtered-out', !match);
-        });
+        applyCardFilter(pill.getAttribute('data-filter'));
       });
     });
+  }
+
+  // Initial pass — hides any future-dated card on load, before any interaction.
+  if (gridCards.length) {
+    var activePill = document.querySelector('.filter-pill.is-active');
+    applyCardFilter(activePill ? activePill.getAttribute('data-filter') : 'all');
   }
 
   /* ---------- cookie consent ---------- */
