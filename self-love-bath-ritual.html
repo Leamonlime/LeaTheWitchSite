@@ -58,7 +58,12 @@
   </script>
   -->
 </head>
-<body>
+<body data-publish-date="2026-08-11">
+  <script>
+  /* staggered-publish gate — if this post’s date is still in the future, send visitors to the listing instead of showing the post */
+  (function(){try{var b=document.body,v=b.getAttribute('data-publish-date');if(!v)return;var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v),t=new Date();t.setHours(0,0,0,0);if(m&&new Date(+m[1],+m[2]-1,+m[3])>t){var s=document.querySelector('meta[property="article:section"]');location.replace(s&&/ritual/i.test(s.content)?'rituals.html':'journal.html');}}catch(e){}})();
+  </script>
+
 
   <header class="site-nav" id="siteNav">
     <a class="nav-brand" href="index.html">Lea the Witch</a>
