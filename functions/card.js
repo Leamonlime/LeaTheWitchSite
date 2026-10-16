@@ -93,7 +93,6 @@ function directoryHtml(showSent) {
       <a href="https://www.pinterest.com/leathewitch/" target="_blank" rel="noopener noreferrer"><span class="label">Pinterest</span>@leathewitch</a>
       <a href="https://github.com/Leamonlime" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span>Leamonlime</a>
       <a href="mailto:hello@leathewitch.com"><span class="label">Email</span>hello@leathewitch.com</a>
-      <a href="mailto:redacted@example.invalid"><span class="label">Personal email</span>redacted@example.invalid</a>
     </div>
 
     <div class="card-enquiry">
