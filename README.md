@@ -45,7 +45,7 @@ code and implemented as Cloudflare Pages Functions:
   (binding name `CARD_CODES`) and sets a session cookie.
 - `functions/card.js` serves either the code form or the page itself.
 - `functions/api/enquiry.js` emails requests from that page through Resend
-  (environment variable `RESEND_API_KEY`).
+  (environment variables `RESEND_API_KEY` and `NOTIFY_TO`, the inbox that receives requests).
 - `scripts/issue-card-codes.js` generates a batch of codes and writes them to KV.
   Generated codes are gitignored and must never be committed.
 

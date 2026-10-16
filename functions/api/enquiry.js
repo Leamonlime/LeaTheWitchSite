@@ -1,10 +1,10 @@
 // POST /api/enquiry
 // Handles the resume/cover-letter request form on /card and emails
 // it to Lea via Resend. Requires a RESEND_API_KEY environment
-// variable set in the Pages project (Settings -> Environment
+// variable and a NOTIFY_TO variable (the inbox that receives the
+// request) set in the Pages project (Settings -> Environment
 // variables), and a verified sending domain in Resend.
 
-const NOTIFY_TO = 'lea.ehlers@pm.me';
 const FROM_ADDRESS = 'Lea the Witch <card@notify.leathewitch.com>';
 
 export async function onRequestPost(context) {
@@ -20,7 +20,7 @@ export async function onRequestPost(context) {
     return Response.redirect(new URL('/card?enquiry=error', url), 303);
   }
 
-  if (env.RESEND_API_KEY) {
+  if (env.RESEND_API_KEY && env.NOTIFY_TO) {
     try {
       await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -30,7 +30,7 @@ export async function onRequestPost(context) {
         },
         body: JSON.stringify({
           from: FROM_ADDRESS,
-          to: [NOTIFY_TO],
+          to: [env.NOTIFY_TO],
           reply_to: email,
           subject: `Resume request from ${name}`,
           text: `${name} (${email}) requested a resume/cover letter via /card.\n\nMessage:\n${message || '(none)'}`
